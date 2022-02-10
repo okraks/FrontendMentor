@@ -1,51 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Clipboard landing page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
 
-  A history of everything you copy
+  <section id="landing">
+    <img src="./images/logo.svg" class="logo-img" alt="logo" />
+    <h1>
+      A history of everything you copy
+    </h1>
+    <p class="paragraph">Clipboard allows you to track and organize everything you
+      copy. Instantly access your clipboard on all your devices.</p>
+    <div>
+      <button class="btn-cyan">Download for iOS</button>
+      <button class="btn-blue">Download for Mac</button>
+    </div>
+  </section>
 
-  Clipboard allows you to track and organize everything you 
-  copy. Instantly access your clipboard on all your devices.
+  <section id="keep-track">
+    <div>
+      <h2>Keep track of your snippets</h2>
+      <p class="paragraph">
+        Clipboard instantly stores any item you copy in the cloud,
+        meaning you can access your snippets immediately on all your
+        devices. Our Mac and iOS apps will help you organize everything.
 
-  Download for iOS
-  Download for Mac
+      </p>
+    </div>
+    <div class="track">
+      <img src="./images/image-computer.png" alt="pc" />
 
-  Keep track of your snippets
+      <div class="inner-features">
+        <div>
+          <h3>
+            Quick Search
+          </h3>
+          <p>
+            Easily search your snippets by content, category, web address, application, and more.
+          </p>
+        </div>
+        <div>
+          <h3>
+            iCloud Sync
+          </h3>
+          <p>
+            Instantly saves and syncs snippets across all your devices.
+          </p>
+        </div>
+        <div>
+          <h3>
+            Complete History
+          </h3>
+          <p>
+            Retrieve any snippets from the first moment you started using the app.
+          </p>
+        </div>
+      </div>
+    </div>
 
-  Clipboard instantly stores any item you copy in the cloud, 
-  meaning you can access your snippets immediately on all your 
-  devices. Our Mac and iOS apps will help you organize everything.
+  </section>
 
-  Quick Search
+  <section id="access">
+    <h1>
+      Access Clipboard anywhere
+    </h1>
+    <p class="paragraph">
+      Whether you’re on the go, or at your computer, you can access all your Clipboard
+      snippets in a few simple clicks.
+    </p>
+    <img src="./images/image-devices.png" alt="devices" />
+  </section>
 
-  Easily search your snippets by content, category, web address, application, and more.
 
-  iCloud Sync
 
-  Instantly saves and syncs snippets across all your devices.
 
-  Complete History
 
-  Retrieve any snippets from the first moment you started using the app.
 
-  Access Clipboard anywhere
 
-  Whether you’re on the go, or at your computer, you can access all your Clipboard 
-  snippets in a few simple clicks.
+
+
+
+
+
+
+
+
+
+
+
+
 
   Supercharge your workflow
 
@@ -65,7 +120,7 @@
 
   Clipboard for iOS and Mac OS
 
-  Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
+  Available for free on the App Store. Download for Mac or iOS, sync with iCloud
   and you’re ready to start adding to your clipboard.
 
   Download for iOS
@@ -76,12 +131,13 @@
   Privacy Policy
   Press Kit
   Install Guide
-  
+
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
 </body>
+
 </html>
