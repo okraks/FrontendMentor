@@ -14,9 +14,17 @@ body {
 }
 
 .card {
-  @apply max-w-4xl mx-auto;
+  @apply max-w-4xl px-16 mx-auto rounded-md my-5 py-10 bg-white;
 }
 
 .button {
   @apply bg-moderate-cyan px-6 py-4 rounded-full text-white hover:bg-dark-cyan;
+}
+
+.stats-head {
+  @apply text-3xl font-bold text-gray-700 mb-1;
+}
+
+.stats-body {
+  @apply font-light text-gray-600 text-sm;
 }
