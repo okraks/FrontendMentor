@@ -90,7 +90,13 @@ body {
   list-style: none;
 }
 
+.completed > div > span {
+  text-decoration: line-through;
+  color: hsl(236, 33%, 92%);
+}
+
 .todos ul li {
+  color: hsl(236, 9%, 61%);
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: row;
@@ -99,8 +105,7 @@ body {
 }
 
 .todos ul li span {
-  padding-left: 1rem;
-  color: hsl(236, 9%, 61%);
+  margin-left: 1rem;
 }
 
 /* remove border bottom from last child */

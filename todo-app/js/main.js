@@ -4,22 +4,41 @@ const list = document.querySelector(".todos-ul");
 
 // function to add new todo html
 const generateTemplate = (todo) => {
-  const html = `
-      <li>
+  let html = ``;
+  let completed = "completed";
+  if (todo.status) {
+    html = `
+      <li  class=${("completed", todo.id)} key=${todo.id}>
         <div>
-          <input type="checkbox" id="todo-checkbox" />
-          <span> ${todo} </span>
+          <input class="status" value=${
+            todo.status
+          } type="checkbox" id="todo-checkbox" />
+          <span> ${todo.name} </span>
         </div>
         <div>
           <img
             class="delete"
             src="./images/icon-cross.svg"
-            alt="complete"
-              />
+            alt="complete" />
          </div>
       </li>
   `;
-
+  } else {
+    html = `
+      <li class=${todo.id} key=${todo.id}>
+        <div>
+          <input class="status" value=${todo.status} type="checkbox" id="todo-checkbox" />
+          <span> ${todo.name} </span>
+        </div>
+        <div>
+          <img
+            class="delete"
+            src="./images/icon-cross.svg"
+            alt="complete" />
+         </div>
+      </li>
+  `;
+  }
   list.innerHTML += html;
 };
 
@@ -32,22 +51,28 @@ addForm.addEventListener("submit", (e) => {
     if (storedTodos) {
       // get all todos in local storage and append new todo
       let allTodos = JSON.parse(localStorage.getItem("todos"));
-
-      allTodos.push({
+      let newTodo = {
+        id: Math.floor(Math.random() * 10000),
         name: todo,
-        status: false,
-      });
+        status: true,
+      };
+      allTodos.push(newTodo);
+      // generate template and add to html
+      generateTemplate(newTodo);
       // add to LS
       localStorage.setItem("todos", JSON.stringify(allTodos));
     } else {
       // add first todo to locaal storage
-      localStorage.setItem(
-        "todos",
-        JSON.stringify([{ name: todo, status: false }])
-      );
+      let newTodo = {
+        id: Math.floor(Math.random() * 10000),
+        name: todo,
+        status: false,
+      };
+      // generate template and add to html
+      generateTemplate(newTodo);
+      localStorage.setItem("todos", JSON.stringify([newTodo]));
     }
-    // generate template and add to html
-    generateTemplate(todo);
+
     // reset all input fields inside form
     addForm.reset();
   }
@@ -55,9 +80,37 @@ addForm.addEventListener("submit", (e) => {
 
 // deleting todos using event delegation
 list.addEventListener("click", (e) => {
-  // check if we clicked the cross
+  // Deleting
   if (e.target.classList.contains("delete")) {
-    e.target.parentElement.parentElement.remove();
+    let todo = e.target.parentElement.parentElement;
+    todo.remove();
+
+    // get id using classes value of li tag
+    let id = todo.classList.value;
+
+    // get localStorage Items
+    const allTodos = JSON.parse(localStorage.getItem("todos"));
+
+    // search through local storage and delete id
+    let newTodos = allTodos.filter((todo) => todo.id != id);
+
+    // set new todos in localstorage
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+  }
+
+  // changing status
+  if (e.target.classList.contains("status")) {
+    let todo = e.target.parentElement.parentElement;
+
+    // get id using classes value of li tag
+    let id = todo.classList.value;
+
+    // add class to todo
+    todo.classList.toggle("completed");
+
+    // store new state in local storage
+    const allTodos = JSON.parse(localStorage.getItem("todos"));
+    allTodos.forEach((todo) => {});
   }
 });
 
@@ -70,17 +123,18 @@ if (storedTodos) {
   let todos = JSON.parse(storedTodos);
   todos.forEach(function (todo) {
     const html = `
-      <li>
+      <li  class=${("completed", todo.id)} key=${todo.id}>
         <div>
-          <input type="checkbox" value=${todo.status} id="todo-checkbox" />
+          <input class="status" value=${
+            todo.status
+          } type="checkbox" id="todo-checkbox" />
           <span> ${todo.name} </span>
         </div>
         <div>
           <img
             class="delete"
             src="./images/icon-cross.svg"
-            alt="complete"
-              />
+            alt="complete" />
          </div>
       </li>
   `;
