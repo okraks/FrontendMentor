@@ -12,31 +12,71 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Todo app</title>
+    <link rel="stylesheet" href="./styles/style.css" type="text/css" />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <title>Frontend Mentor | Todo App</title>
   </head>
   <body>
-    Todo
+    <header class="header" />
+    <div class="main">
+      <div class="title">
+        <h1 class="header-title-todo">TODO</h1>
+        <div>
+          <img class="display-icon" src="./images/icon-moon.svg" alt="moon" />
+        </div>
+      </div>
+      <!-- form to add new todo-->
+      <form class="new-todo-form add-todo">
+        <input type="checkbox" id="todo-checkbox" name="scales" />
+        <input
+          type="text"
+          name="add"
+          id="todo-text-input"
+          placeholder="Create a new todo..."
+        />
+      </form>
+      <!-- todos-->
+      <div class="todos">
+        <ul class="todos-ul">
+          <li>
+            <div>
+              <input type="checkbox" id="todo-checkbox" />
+              <span> Jog around the park </span>
+            </div>
+            <div>
+              <img
+                class="delete"
+                src="./images/icon-cross.svg"
+                alt="complete"
+              />
+            </div>
+          </li>
 
-    <!-- Add dynamic number -->
-    items left All Active Completed Clear Completed Drag and drop to reorder
-    list
+          <li>
+            <div>
+              <input type="checkbox" id="todo-checkbox" />
+              <span> Pick up groceries </span>
+            </div>
+            <div>
+              <img
+                class="delete"
+                src="./images/icon-cross.svg"
+                alt="complete"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
+    <!-- ATTRIBUTION -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>

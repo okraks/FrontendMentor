@@ -1,0 +1,141 @@
+/* google fonts */
+@import url("@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+.header {
+  background-image: url("../images/bg-desktop-light.jpg");
+  height: 35vh;
+  width: 100%;
+}
+
+.header-title-todo {
+  color: white;
+}
+
+.main {
+  width: 40vw;
+  margin: 0 auto;
+  padding-top: 15vh;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-icon {
+  width: 1rem;
+}
+
+.new-todo-form {
+  display: flex;
+  flex-direction: row;
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+}
+
+#todo-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#todo-checkbox:checked {
+  background: rgb(87, 221, 255);
+  background: linear-gradient(
+    143deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+}
+
+.new-todo-form #todo-text-input {
+  flex-basis: 80%;
+  padding-left: 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: hsl(236, 9%, 61%);
+}
+
+.todos {
+  border-radius: 0.5rem;
+  background-color: white;
+  margin: 0 auto;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.todos ul {
+  list-style: none;
+}
+
+.todos ul li {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.todos ul li span {
+  padding-left: 1rem;
+  color: hsl(236, 9%, 61%);
+}
+
+/* remove border bottom from last child */
+.todos li:last-child {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: none;
+}
+
+.delete {
+  cursor: pointer;
+}
+/* other */
+
+.attribution {
+  margin-top: 5rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-device-width: 480px) {
+  .header {
+    background-image: url("../images/bg-desktop-light.jpg");
+    height: 30vh;
+    width: 100%;
+  }
+
+  .main {
+    width: 90vw;
+    margin: 0 auto;
+    padding-top: 8vh;
+  }
+}
