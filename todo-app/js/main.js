@@ -123,7 +123,7 @@ if (storedTodos) {
   let todos = JSON.parse(storedTodos);
   todos.forEach(function (todo) {
     const html = `
-      <li  class=${("completed", todo.id)} key=${todo.id}>
+      <li class=${("completed", todo.id)} key=${todo.id}>
         <div>
           <input class="status" value=${
             todo.status
