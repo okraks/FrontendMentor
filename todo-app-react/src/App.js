@@ -12,7 +12,7 @@ function App() {
       <div className="bg-bgDesktopLight dark:bg-bgDesktopDark h-96 bg-no-repeat"></div>
       <div className="-mt-72 max-w-xl mx-auto">
         <div className="flex flex-row justify-between">
-          <h1 className=" text-4xl text-white dark:text-white">TODO</h1>
+          <h1 className=" text-4xl  text-white dark:text-white">TODO</h1>
           <Toggle />
         </div>
         {/* add New todo */}

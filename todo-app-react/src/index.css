@@ -8,10 +8,54 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-body {
-  font-family: "Josefin Sans", sans-serif;
-  min-height: 100vh;
-  font-size: 18px;
+.completed-todo {
+  @apply dark:text-very-dark-grayish-blue line-through font-extralight text-very-dark-desaturated-blue;
+}
+
+.uncompleted-todo {
+  @apply dark:text-very-light-gray text-very-dark-desaturated-blue;
+}
+
+.todo-line {
+  border-top: 0.5px solid #565656;
+}
+
+.todo-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 0.5px solid #565656;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-checkbox-completed {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: none;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 0.5px solid #565656;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  background: rgb(87, 221, 255);
+  background: linear-gradient(
+    143deg,
+    rgba(87, 221, 255, 1) 0%,
+    rgba(192, 88, 243, 1) 100%
+  );
+}
+
+.new-form {
+  border: none;
+  outline: none;
 }
