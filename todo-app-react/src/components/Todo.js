@@ -5,9 +5,6 @@ import check from "../img/icon-check.svg";
 
 function Todo({ todo, changed, setChanged }) {
   const deleteTodo = (id) => {
-    // delete here
-    console.log("deleting", id);
-
     // filter todo out of LS
     let todos = JSON.parse(localStorage.getItem("todos"));
 
@@ -21,11 +18,40 @@ function Todo({ todo, changed, setChanged }) {
   };
 
   // change status of todo
+  const changeStatus = (id) => {
+    // changing status
+    let todos = JSON.parse(localStorage.getItem("todos"));
+
+    let newTodos = [];
+
+    // loop through todos, change status of selected one
+    todos.forEach((todo) => {
+      if (todo.id === id) {
+        let changed = {
+          id,
+          name: todo.name,
+          status: !todo.status,
+        };
+        newTodos.push(changed);
+      } else {
+        newTodos.push(todo);
+      }
+    });
+
+    // push new array to LS
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+
+    //
+    setChanged(!changed);
+  };
   return (
     <div>
       <div className="flex flex-row justify-between p-5">
         <div className="flex flex-row ">
-          <div className="mr-5 cursor-pointer">
+          <div
+            onClick={() => changeStatus(todo.id)}
+            className="mr-5 cursor-pointer"
+          >
             {todo.status ? (
               <div className="todo-checkbox-completed">
                 <img className="mx-auto mt-2" src={check} alt="check" />
