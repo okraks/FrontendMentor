@@ -44,75 +44,111 @@ function AllTodos({ todos, changed, setChanged }) {
   };
 
   return (
-    <div className="dark:bg-very-dark-desaturated-blue bg-white rounded-lg">
-      {/* todos */}
+    <React.Fragment>
+      <div className="dark:bg-very-dark-desaturated-blue bg-white rounded-lg shadow-2xl">
+        {/* todos */}
 
-      {view === "all" ? (
-        <React.Fragment>
-          {todos.map((todo) => {
-            return (
-              <Todo
-                changed={changed}
-                setChanged={setChanged}
-                key={todo.id}
-                todo={todo}
-              />
-            );
-          })}
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          {" "}
-          {filteredTodos.map((todo) => {
-            return (
-              <Todo
-                changed={changed}
-                setChanged={setChanged}
-                key={todo.id}
-                todo={todo}
-              />
-            );
-          })}
-        </React.Fragment>
-      )}
+        {view === "all" ? (
+          <React.Fragment>
+            {todos.map((todo) => {
+              return (
+                <Todo
+                  changed={changed}
+                  setChanged={setChanged}
+                  key={todo.id}
+                  todo={todo}
+                />
+              );
+            })}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            {" "}
+            {filteredTodos.map((todo) => {
+              return (
+                <Todo
+                  changed={changed}
+                  setChanged={setChanged}
+                  key={todo.id}
+                  todo={todo}
+                />
+              );
+            })}
+          </React.Fragment>
+        )}
 
-      {/* summary */}
-      <div className="flex flex-row justify-between dark:text-gray-200 text-gray-500 font-extralight text-xs p-5">
-        {/* items left */}
-        <div className="w-1/5">
-          <p>{active} items left</p>
-        </div>
+        {/* summary */}
+        <div className="flex flex-row justify-between dark:text-gray-200 text-gray-500 font-extralight text-xs p-5">
+          {/* items left */}
+          <div className="md:w-1/5">
+            <p className="status-filter">{active} items left</p>
+          </div>
 
-        {/* filters */}
-        <div className="flex flex-row justify-between w-2/5 cursor-pointer">
-          <p
-            onClick={() => setView("all")}
-            className={view === "all" ? "text-primary-blue" : null}
-          >
-            All
-          </p>
-          <p
-            onClick={() => setView("active")}
-            className={view === "active" ? "text-primary-blue" : null}
-          >
-            Active
-          </p>
-          <p
-            onClick={() => setView("completed")}
-            className={view === "completed" ? "text-primary-blue" : null}
-          >
-            Completed
-          </p>
-        </div>
+          {/* filters */}
+          <div className="hidden md:block">
+            <span
+              onClick={() => setView("all")}
+              className={
+                view === "all" ? "status-filter-active" : "status-filter"
+              }
+            >
+              All
+            </span>
+            <span
+              onClick={() => setView("active")}
+              className={
+                view === "active" ? "status-filter-active" : "status-filter"
+              }
+            >
+              Active
+            </span>
+            <span
+              onClick={() => setView("completed")}
+              className={
+                view === "completed" ? "status-filter-active" : "status-filter"
+              }
+            >
+              Completed
+            </span>
+          </div>
 
-        {/* clear completed */}
-        <div className="w-1/5">
-          <p className="cursor-pointer" onClick={() => clearCompleted()}>
-            Clear Completed
-          </p>
+          {/* clear completed */}
+          <div className="md:w-1/5">
+            <p
+              className=" status-filter cursor-pointer"
+              onClick={() => clearCompleted()}
+            >
+              Clear Completed
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+      {/* mobile filters */}
+      <div className="block md:hidden my-5 py-5  text-center dark:bg-very-dark-desaturated-blue bg-white rounded-lg shadow-2xl">
+        <span
+          onClick={() => setView("all")}
+          className={view === "all" ? "status-filter-active" : "status-filter"}
+        >
+          All
+        </span>
+        <span
+          onClick={() => setView("active")}
+          className={
+            view === "active" ? "status-filter-active" : "status-filter"
+          }
+        >
+          Active
+        </span>
+        <span
+          onClick={() => setView("completed")}
+          className={
+            view === "completed" ? "status-filter-active" : "status-filter"
+          }
+        >
+          Completed
+        </span>
+      </div>
+    </React.Fragment>
   );
 }
 export default AllTodos;

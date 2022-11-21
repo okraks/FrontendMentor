@@ -12,15 +12,19 @@
 }
 
 .completed-todo {
-  @apply dark:text-very-dark-grayish-blue line-through font-extralight text-very-dark-desaturated-blue;
+  @apply dark:text-very-dark-grayish-blue line-through font-extralight text-light-grayish-blue;
 }
 
 .uncompleted-todo {
-  @apply dark:text-very-light-gray text-very-dark-desaturated-blue;
+  @apply dark:text-very-light-gray text-very-dark-grayish-blue;
 }
 
 .todo-line {
-  border-top: 0.5px solid #565656;
+  border-top: 0.5px solid hsl(233, 11%, 84%);
+}
+
+.todo-line-dark {
+  border-top: 0.5px solid hsl(233, 14%, 35%);
 }
 
 .todo-checkbox {
@@ -29,7 +33,7 @@
   background-color: none;
   border-radius: 50%;
   vertical-align: middle;
-  border: 0.5px solid #565656;
+  border: 0.5px solid hsl(233, 11%, 84%);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -42,7 +46,7 @@
   background-color: none;
   border-radius: 50%;
   vertical-align: middle;
-  border: 0.5px solid #565656;
+  border: 0.5px solid hsl(233, 11%, 84%);
   appearance: none;
   -webkit-appearance: none;
   outline: none;
@@ -58,4 +62,12 @@
 .new-form {
   border: none;
   outline: none;
+}
+
+.status-filter {
+  @apply mr-3 text-dark-grayish-blue hover:dark:text-white hover:text-very-dark-blue cursor-pointer;
+}
+
+.status-filter-active {
+  @apply text-primary-blue mr-3 cursor-pointer;
 }

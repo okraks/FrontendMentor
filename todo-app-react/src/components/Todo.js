@@ -75,7 +75,7 @@ function Todo({ todo, changed, setChanged }) {
           />
         </div>
       </div>
-      <hr className="todo-line" />
+      <hr className="dark:todo-line-dark todo-line" />
     </div>
   );
 }

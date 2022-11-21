@@ -18,9 +18,11 @@ function App() {
   return (
     <div>
       <div className="bg-bgDesktopLight dark:bg-bgDesktopDark h-96 bg-no-repeat"></div>
-      <div className="-mt-72 max-w-xl mx-auto">
+      <div className="-mt-72 w-full px-5 md:px-0 md:max-w-xl mx-auto">
         <div className="flex flex-row justify-between">
-          <h1 className=" text-4xl  text-white dark:text-white">TODO</h1>
+          <h1 className=" text-4xl  text-white dark:text-white tracking-[0.8rem] mb-5">
+            TODO
+          </h1>
           <Toggle />
         </div>
         {/* add New todo */}

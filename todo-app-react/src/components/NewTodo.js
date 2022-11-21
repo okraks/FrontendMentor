@@ -47,6 +47,7 @@ function NewTodo({ todos, setChanged, changed }) {
           }}
         >
           <input
+            placeholder="Create a new todo..."
             onChange={(e) => setTodo(e.target.value)}
             value={todo}
             className="w-full dark:text-very-light-grayish-blue text-very-dark-grayish-blue dark:bg-very-dark-desaturated-blue bg-white new-form"
