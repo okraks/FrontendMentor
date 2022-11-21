@@ -20,6 +20,29 @@ function AllTodos({ todos, changed, setChanged }) {
     }
   }, [view, changed, todos]);
 
+  //
+  const [active, setActive] = useState(null);
+  useEffect(() => {
+    let allTodos = JSON.parse(localStorage.getItem("todos"));
+
+    let active = allTodos.filter((todo) => todo.status === false);
+
+    setActive(active.length);
+  }, [view, changed, todos]);
+
+  const clearCompleted = () => {
+    // clear completed
+    let allTodos = JSON.parse(localStorage.getItem("todos"));
+
+    let active = allTodos.filter((todo) => todo.status === false);
+
+    // set local stoarge
+    localStorage.setItem("todos", JSON.stringify(active));
+
+    // changed
+    setChanged(!changed);
+  };
+
   return (
     <div className="dark:bg-very-dark-desaturated-blue bg-white rounded-lg">
       {/* todos */}
@@ -57,7 +80,7 @@ function AllTodos({ todos, changed, setChanged }) {
       <div className="flex flex-row justify-between dark:text-gray-200 text-gray-500 font-extralight text-xs p-5">
         {/* items left */}
         <div className="w-1/5">
-          <p>{todos.length} items left</p>
+          <p>{active} items left</p>
         </div>
 
         {/* filters */}
@@ -84,7 +107,9 @@ function AllTodos({ todos, changed, setChanged }) {
 
         {/* clear completed */}
         <div className="w-1/5">
-          <p>Clear Completed</p>
+          <p className="cursor-pointer" onClick={() => clearCompleted()}>
+            Clear Completed
+          </p>
         </div>
       </div>
     </div>
