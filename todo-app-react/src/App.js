@@ -26,7 +26,7 @@ function App() {
         {/* add New todo */}
         <NewTodo changed={changed} setChanged={setChanged} todos={todos} />
         {/* display todos */}
-        <AllTodos todos={todos} />
+        <AllTodos changed={changed} setChanged={setChanged} todos={todos} />
       </div>
     </div>
   );

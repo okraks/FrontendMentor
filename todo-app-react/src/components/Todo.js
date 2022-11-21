@@ -3,7 +3,24 @@ import React from "react";
 import Ex from "../img/icon-cross.svg";
 import check from "../img/icon-check.svg";
 
-function Todo({ todo }) {
+function Todo({ todo, changed, setChanged }) {
+  const deleteTodo = (id) => {
+    // delete here
+    console.log("deleting", id);
+
+    // filter todo out of LS
+    let todos = JSON.parse(localStorage.getItem("todos"));
+
+    let newTodos = todos.filter((todo) => todo.id != id);
+
+    // add new array to LS
+    localStorage.setItem("todos", JSON.stringify(newTodos));
+
+    // trigger change
+    setChanged(!changed);
+  };
+
+  // change status of todo
   return (
     <div>
       <div className="flex flex-row justify-between p-5">
@@ -23,7 +40,12 @@ function Todo({ todo }) {
           </p>
         </div>
         <div>
-          <img className="cursor-pointer" src={Ex} alt="cross" />
+          <img
+            onClick={() => deleteTodo(todo.id)}
+            className="cursor-pointer"
+            src={Ex}
+            alt="cross"
+          />
         </div>
       </div>
       <hr className="todo-line" />
