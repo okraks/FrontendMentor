@@ -22,6 +22,7 @@ function AllTodos({ todos, changed, setChanged }) {
 
   //
   const [active, setActive] = useState(null);
+
   useEffect(() => {
     let allTodos = JSON.parse(localStorage.getItem("todos")) || null;
 
