@@ -23,11 +23,14 @@ function AllTodos({ todos, changed, setChanged }) {
   //
   const [active, setActive] = useState(null);
   useEffect(() => {
-    let allTodos = JSON.parse(localStorage.getItem("todos"));
+    let allTodos = JSON.parse(localStorage.getItem("todos")) || null;
 
-    let active = allTodos.filter((todo) => todo.status === false);
-
-    setActive(active.length);
+    let active = 0;
+    setActive(0);
+    if (allTodos != null) {
+      active = allTodos.filter((todo) => todo.status === false);
+      setActive(active.length);
+    }
   }, [view, changed, todos]);
 
   const clearCompleted = () => {
