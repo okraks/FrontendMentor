@@ -2,13 +2,9 @@ import React from "react";
 
 import Todo from "./Todo";
 
-function AllTodos() {
-  let todos = [
-    { id: 1, name: "Buy eggs", status: true },
-    { id: 2, name: "Jog around park", status: false },
-    { id: 3, name: "Do homework", status: true },
-    { id: 4, name: "15 min call with Rick", status: false },
-  ];
+function AllTodos({ todos }) {
+  // calculate uncompleted todos
+
   return (
     <div className="dark:bg-very-dark-desaturated-blue bg-white rounded-lg">
       {/* todos */}

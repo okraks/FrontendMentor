@@ -1,12 +1,20 @@
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
+
 import "./App.css";
-import Todo from "./components/Todo";
 
 import Toggle from "./theme/ThemeToggle";
 import AllTodos from "./components/AllTodos";
 import NewTodo from "./components/NewTodo";
 
 function App() {
+  const [changed, setChanged] = useState(false);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
+
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("todos")) || []);
+  }, [changed]);
   return (
     <div>
       <div className="bg-bgDesktopLight dark:bg-bgDesktopDark h-96 bg-no-repeat"></div>
@@ -16,9 +24,9 @@ function App() {
           <Toggle />
         </div>
         {/* add New todo */}
-        <NewTodo />
+        <NewTodo changed={changed} setChanged={setChanged} todos={todos} />
         {/* display todos */}
-        <AllTodos />
+        <AllTodos todos={todos} />
       </div>
     </div>
   );
