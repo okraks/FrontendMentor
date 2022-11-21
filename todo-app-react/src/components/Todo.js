@@ -44,6 +44,7 @@ function Todo({ todo, changed, setChanged }) {
     //
     setChanged(!changed);
   };
+
   return (
     <div>
       <div className="flex flex-row justify-between p-5">

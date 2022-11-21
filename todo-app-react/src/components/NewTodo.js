@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import check from "../img/icon-check.svg";
 
 function NewTodo({ todos, setChanged, changed }) {
-  let status = false;
+  const [status, setStatus] = useState(false);
   const [todo, setTodo] = useState("");
 
   const addNewTodo = () => {
     // adding new todo
     let newTodo = {
-      status: false,
+      status,
       name: todo,
       id: Math.floor(Math.random() * 10000),
     };
@@ -26,10 +26,11 @@ function NewTodo({ todos, setChanged, changed }) {
     // clear state
     setTodo("");
   };
+
   return (
     <div className="mt-5 mb-8 w-full dark:bg-very-dark-desaturated-blue p-5 rounded-lg bg-white">
       <div className="flex flex-row ">
-        <div className="mr-5 cursor-pointer">
+        <div onClick={() => setStatus(!status)} className="mr-5 cursor-pointer">
           {status ? (
             <div className="todo-checkbox-completed">
               <img className="mx-auto mt-2" src={check} alt="check" />
