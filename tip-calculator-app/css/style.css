@@ -1,0 +1,27 @@
+body {
+  background-color: hsl(185, 41%, 84%);
+  height: 100%;
+  width: auto;
+  padding-top: 10%;
+}
+
+.main-logo {
+  text-align: center;
+  align-self: center;
+}
+
+.calculator-body {
+  margin: 2rem 0;
+  background-color: #fff;
+  display: flex;
+  padding: 9rem 2rem;
+  flex-direction: row;
+  border-radius: 1rem;
+  width: 50%;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.results {
+  background-color: hsl(183, 100%, 15%);
+}
