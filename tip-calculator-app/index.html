@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -14,8 +13,6 @@
 
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
     <img class="main-logo" src="./images/logo.svg" alt="logo" />
@@ -32,15 +29,28 @@
           <span class="tip-select">50%</span>
           <span class="custom">Custom</span>
         </div>
-        <div>
+        <div class="num">
           <label>Number of People</label>
 
           <input class="peopleNumber" type="number" />
         </div>
       </div>
       <div class="results">
-        <p>Tip Amount</p>
-        <button>RESET</button>
+        <div class="summary">
+          <div>
+            <p class="summary-text">Tip Amount</p>
+            <p class="summary-desc">/person</p>
+          </div>
+          <p class="summary-amount">$4.27</p>
+        </div>
+        <div class="summary">
+          <div class="summary-text">
+            <p class="summary-text">Total</p>
+            <p class="summary-desc">/person</p>
+          </div>
+          <p class="summary-amount">$32.79</p>
+        </div>
+        <button class="reset-btn">RESET</button>
       </div>
     </div>
   </body>

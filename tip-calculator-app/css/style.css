@@ -22,9 +22,8 @@ body {
   padding: 1rem 2rem;
   flex-direction: row;
   border-radius: 1rem;
-  width: 50%;
+  width: 60%;
   margin: auto;
-
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -53,12 +52,67 @@ body {
 }
 
 .tip-select {
+  cursor: pointer;
+  text-align: center;
   background-color: hsl(183, 100%, 15%);
   color: #fff;
   padding: 0.6rem 1.5rem;
   border-radius: 0.2rem;
 }
 
+.tip-select:hover {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 84%);
+}
+
 .custom {
   padding: 0.6rem 1.5rem;
+}
+
+.num {
+  margin-top: 1rem;
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.summary-amount {
+  font-size: 1.5rem;
+  color: hsl(172, 67%, 45%);
+}
+
+.summary-text {
+  color: #fff;
+}
+
+.summary-desc {
+  color: hsl(184, 14%, 56%);
+}
+
+input {
+  text-align: right;
+  border-radius: 0.2rem;
+  border: 0px solid;
+  background-color: hsl(189, 41%, 97%);
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.reset-btn {
+  cursor: pointer;
+  margin-top: 3rem;
+  width: 100%;
+  background-color: hsl(172, 67%, 45%);
+  border: 0px none;
+  color: hsl(183, 100%, 15%);
+  border-radius: 0.2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.reset-btn:hover {
+  background-color: hsl(185, 41%, 84%);
 }
