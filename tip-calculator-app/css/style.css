@@ -1,27 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
 body {
   background-color: hsl(185, 41%, 84%);
   height: 100%;
   width: auto;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .main-logo {
-  text-align: center;
-  align-self: center;
+  margin: 2rem auto;
+  display: block;
 }
 
 .calculator-body {
-  margin: 2rem 0;
-  background-color: #fff;
   display: flex;
-  padding: 9rem 2rem;
+  background-color: #fff;
+  padding: 1rem 2rem;
   flex-direction: row;
   border-radius: 1rem;
   width: 50%;
+  margin: auto;
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.calculate {
+  flex: 1;
+  margin: 1rem;
+}
+
 .results {
+  margin: 1rem;
+  flex: 1;
+  border-radius: 1rem;
+  padding: 2rem;
   background-color: hsl(183, 100%, 15%);
+}
+
+.peopleNumber {
+  display: block;
+  width: 100%;
+}
+
+.tip-select-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tip-select {
+  background-color: hsl(183, 100%, 15%);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.2rem;
+}
+
+.custom {
+  padding: 0.6rem 1.5rem;
 }
