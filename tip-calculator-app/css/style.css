@@ -2,6 +2,8 @@
 
 * {
   font-family: "Space Mono", monospace;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -22,7 +24,7 @@ body {
   padding: 1rem 2rem;
   flex-direction: row;
   border-radius: 1rem;
-  width: 60%;
+  width: 50%;
   margin: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -65,10 +67,6 @@ body {
   background-color: hsl(185, 41%, 84%);
 }
 
-.custom {
-  padding: 0.6rem 1.5rem;
-}
-
 .num {
   margin-top: 1rem;
 }
@@ -86,19 +84,59 @@ body {
 
 .summary-text {
   color: #fff;
+  line-height: normal;
 }
 
 .summary-desc {
   color: hsl(184, 14%, 56%);
+  line-height: normal;
+  font-size: 0.7rem;
 }
 
+.desc {
+  color: hsl(184, 14%, 56%);
+  font-size: 0.9rem;
+}
+
+.m-5 {
+  margin-top: 2rem;
+}
+
+.custom-input {
+  text-align: center;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  border: 2px none;
+  width: 85%;
+  background-color: hsl(189, 41%, 97%);
+}
+
+.custom-input:focus {
+  text-align: right;
+}
 input {
   text-align: right;
   border-radius: 0.2rem;
-  border: 0px solid;
+  border: 2px none;
   background-color: hsl(189, 41%, 97%);
   width: 100%;
   padding: 0.5rem;
+}
+
+.input-holder {
+  position: relative;
+}
+
+.input-icon {
+  display: inline-block;
+  position: absolute;
+  top: 25%;
+  left: 2%;
+}
+
+input:focus {
+  outline: none !important;
+  border: 2px solid hsl(172, 67%, 45%);
 }
 
 .reset-btn {
@@ -115,4 +153,52 @@ input {
 
 .reset-btn:hover {
   background-color: hsl(185, 41%, 84%);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media only screen and (max-device-width: 980px) {
+  body {
+    width: 100%;
+    padding-top: 2%;
+  }
+
+  .main-logo {
+    margin: 2rem auto;
+    display: block;
+  }
+
+  .calculator-body {
+    display: flex;
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+    border-radius: 1rem;
+    width: 100%;
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    height: 80vh;
+  }
+
+  .calculate {
+    margin: 0.1rem;
+  }
+
+  .results {
+    margin: 0.1rem;
+    flex: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: hsl(183, 100%, 15%);
+  }
 }
