@@ -7,7 +7,14 @@
 }
 
 body {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  background-color: hsl(36, 100%, 99%);
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.5rem;
 }
 
 img {
@@ -17,9 +24,62 @@ img {
 .flex-it {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.side-bar {
+  background-color: hsl(240, 100%, 5%);
+  color: hsl(36, 100%, 99%);
+  padding: 2rem;
+}
+
+.new-text {
+  color: hsl(35, 77%, 62%);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mini-header {
+  margin: 2rem auto;
+}
+
+.bright {
+  font-size: 3rem;
+}
+
+.red-btn {
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  border: 0px none;
 }
 
 .sider-item {
   display: flex;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: auto 1rem;
+  color: hsl(236, 13%, 42%);
+}
+
+header {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.articles {
+  margin-top: 3rem;
+}
+
+.article-img {
+  width: auto;
+  height: 90%;
+}
+
+.div-img-article {
+  background-color: red;
 }
