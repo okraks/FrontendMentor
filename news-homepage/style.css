@@ -10,6 +10,7 @@ body {
   width: 80%;
   margin: 0 auto;
   background-color: hsl(36, 100%, 99%);
+  padding-bottom: 10rem;
 }
 
 p {
@@ -46,6 +47,7 @@ img {
 
 .bright {
   font-size: 3rem;
+  font-weight: 900;
 }
 
 .red-btn {
@@ -56,8 +58,30 @@ img {
   border: 0px none;
 }
 
+.news-item {
+  margin-bottom: 1rem;
+}
+
+.news-item h4 {
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
+.news-item hr {
+  border: none;
+  border-top: 1px solid hsl(236, 13%, 42%);
+}
+
+.news-item p {
+  font-size: 13px;
+  font-weight: lighter;
+  color: hsl(233, 8%, 79%);
+  margin-bottom: 1.5rem;
+}
+
 .sider-item {
   display: flex;
+  gap: 1rem;
 }
 
 nav ul li {
@@ -67,19 +91,41 @@ nav ul li {
 }
 
 header {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding: 3rem 0;
 }
 
 .articles {
+  display: flex;
   margin-top: 3rem;
+  gap: 5rem;
 }
 
 .article-img {
-  width: auto;
-  height: 90%;
+  width: 100%;
 }
 
 .div-img-article {
-  background-color: red;
+  width: auto;
+  height: 20%;
+}
+
+.sider-item h3 {
+  color: hsl(233, 8%, 79%);
+  font-size: 2rem;
+}
+
+.sider-item h5 {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.sider-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sider-item p {
+  color: hsl(233, 8%, 79%);
+  font-size: 13px;
 }
