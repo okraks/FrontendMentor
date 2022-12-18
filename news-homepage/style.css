@@ -129,3 +129,30 @@ header {
   color: hsl(233, 8%, 79%);
   font-size: 13px;
 }
+
+/* mobile screens */
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 20%;
+  }
+
+  .flex-it {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav {
+    visibility: hidden;
+  }
+
+  .articles {
+    display: flex;
+    flex-direction: column;
+  }
+}
