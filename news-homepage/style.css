@@ -29,6 +29,13 @@ img {
   justify-content: space-between;
 }
 
+.flex-it-header {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
 .side-bar {
   background-color: hsl(240, 100%, 5%);
   color: hsl(36, 100%, 99%);
@@ -51,6 +58,7 @@ img {
 }
 
 .red-btn {
+  margin: 2rem auto;
   background-color: hsl(5, 85%, 63%);
   color: hsl(36, 100%, 99%);
   padding: 1rem 2rem;
@@ -82,6 +90,10 @@ img {
 .sider-item {
   display: flex;
   gap: 1rem;
+}
+
+nav {
+  place-self: center;
 }
 
 nav ul li {
@@ -127,7 +139,11 @@ header {
 
 .sider-item p {
   color: hsl(233, 8%, 79%);
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.menu-icon {
+  display: none;
 }
 
 /* mobile screens */
@@ -138,13 +154,28 @@ header {
     margin: 0 auto;
   }
 
+  .sider-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .flex-it-header {
+    display: flex;
+    flex-direction: row;
+  }
+
   .logo {
-    width: 20%;
+    width: 100%;
   }
 
   .flex-it {
     display: flex;
     flex-direction: column;
+  }
+
+  .menu-icon {
+    display: block;
   }
 
   nav {
