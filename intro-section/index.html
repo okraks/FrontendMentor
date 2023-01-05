@@ -22,15 +22,27 @@
         </div>
         <nav>
           <ul>
-            <li>Features</li>
+            <li>
+              <span class="dropdown"
+                >Features
+                <img src="./images/icon-arrow-down.svg" alt="arrow down" />
+              </span>
+              <div class="dropdown-content">
+                <span>
+                  <img src="./images/icon-todo.svg" alt="todo" /> Todo List
+                </span>
+              </div>
+            </li>
             <li>Company</li>
             <li>Careers</li>
             <li>About</li>
           </ul>
         </nav>
       </div>
-
-      <div>
+      <div class="side-menu-icon">
+        <img src="./images/icon-menu.svg" alt="menu-icon" />
+      </div>
+      <div class="nav-btns">
         <button class="btn-no-border">Login</button>
         <button class="btn-outline">Register</button>
       </div>
@@ -42,7 +54,9 @@
           Get your team in sync, no matter your location. Streamline processes,
           create team rituals, and watch productivity soar.
         </p>
-        <button class="btn-filled">Learn more</button>
+        <div>
+          <button class="learn-more btn-filled">Learn more</button>
+        </div>
 
         <div class="client-logos">
           <img src="./images/client-databiz.svg" alt="databiz" />
@@ -53,9 +67,14 @@
       </div>
       <div>
         <img
-          class="main-image"
+          class="main-image-desktop"
           src="./images/image-hero-desktop.png"
           alt="hero"
+        />
+        <img
+          class="main-image-mobile"
+          src="./images/image-hero-mobile.png"
+          alt="hero mobile"
         />
       </div>
     </main>
