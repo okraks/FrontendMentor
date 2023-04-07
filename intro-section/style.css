@@ -59,7 +59,8 @@ main h1 {
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .main-content p {
